@@ -24,14 +24,8 @@ public class CrawlerXinhuanet extends WebCrawler {
 
 
 	@Override
-	public void visit(Page page) {
+	public void siteProcessor(Document d,Dictionary<String,Object> dic) {
 		// TODO Auto-generated method stub
-		if (page == null)
-			return;
-		if (isPage(page.getUrl()))
-		{
-			System.out.println("crawling: " + page.getUrl());
-			Document d = Jsoup.parse(page.getContent(),page.getUrl());
 			
 			
 			if (d.getElementById("div_currpage")!=null)
@@ -41,9 +35,7 @@ public class CrawlerXinhuanet extends WebCrawler {
 						return;
 			}
 			
-			
-			Dictionary<String,Object> dic = new Hashtable<String,Object>();
-			UrlProcessor p = new UrlProcessor(page.getUrl());
+			UrlProcessor p = new UrlProcessor(d.baseUri());
 			dic.put("url", p.getPureurl());
 			if (!d.getElementsByTag("title").isEmpty())
 			{
@@ -111,7 +103,7 @@ public class CrawlerXinhuanet extends WebCrawler {
 				dic.put("pubtime",d.getElementById("pubtime").text().replace("年", "-").replace("月","-").replace("日", ""));
 			else
 			{
-				Matcher ma = PageTest.matcher(page.getUrl());
+				Matcher ma = PageTest.matcher(d.baseUri());
 				if (ma.find())
 				{
 					dic.put("pubtime",ma.group("year") + "-" + ma.group("day"));
@@ -120,15 +112,6 @@ public class CrawlerXinhuanet extends WebCrawler {
 			dic.put("posurl", p.getDomain());
 			dic.put("lastrefresh", new Date());
 			dic.put("processed", false);
-			
-			MySql m = new MySql();
-			m.insertData("site" + getName(), dic);
-			
-			
-			System.out.println(page.getUrl() + " crawled");
-		}
-		else
-			System.out.print(".");
 	}
 
 	@Override
