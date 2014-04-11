@@ -48,68 +48,54 @@ public class Crawler163 extends WebCrawler{
 		
 	}
 	@Override
-	public void visit(Page page) {
+	public void siteProcessor(Document d,Dictionary<String,Object>dic) {
 		// TODO Auto-generated method stub
-		
-		if (page == null)
-			return;
-		if (isPage(page.getUrl()))
+		for (Element e : d.getElementsByTag("a"))
 		{
-			Dictionary<String,Object> dic = new Hashtable<String,Object>();
-			Document d = Jsoup.parse(page.getContent(),page.getUrl());
-			for (Element e : d.getElementsByTag("a"))
+			if (e.attr("class").equals("ep-pages-all"))
 			{
-				if (e.attr("class").equals("ep-pages-all"))
+				try
 				{
-					try
-					{
-						d = Jsoup.connect(e.absUrl("href")).get();
-						break;
-					}catch (Exception ex) {}
-				}
-				
-			}
-			
-			
-			
-			//content
-			for (Element e: d.getElementsByTag("div"))
-			{
-				if (e.attr("id").equals("endText"))
-				{
-					dic.put("content", e.text());
-					dic.put("html", e.html().replaceAll("<iframe[^>]+>[^<>]+</iframe>", ""));
-					if (!dic.get("content").equals(""))
-						break;
-				}
-			}
-			
-			//time & source
-			for (Element e : d.getElementsByTag("div"))
-			{
-				if (e.attr("class").contains("ep-info"))
-				{
-					Matcher ma = getTime.matcher(e.html());
-					if (ma.find())
-						dic.put("pubtime", ma.group("time"));
-					
-					ma = getSource.matcher(e.html());
-					if (ma.find())
-					{
-						dic.put("fromsite",ma.group("source"));
-						dic.put("fromurl", ma.group("url"));
-					}
+					d = Jsoup.connect(e.absUrl("href")).get();
 					break;
-				}
+				}catch (Exception ex) {}
 			}
-			super.visit(d,dic);
-			m.insertData("site" + getName(), dic);
 			
 		}
-		else
+		
+		
+		
+		//content
+		for (Element e: d.getElementsByTag("div"))
 		{
-			System.out.println("skip: " + page.getUrl());
+			if (e.attr("id").equals("endText"))
+			{
+				dic.put("content", e.text());
+				dic.put("html", e.html().replaceAll("<iframe[^>]+>[^<>]+</iframe>", ""));
+				if (!dic.get("content").equals(""))
+					break;
+			}
 		}
+		
+		//time & source
+		for (Element e : d.getElementsByTag("div"))
+		{
+			if (e.attr("class").contains("ep-info"))
+			{
+				Matcher ma = getTime.matcher(e.html());
+				if (ma.find())
+					dic.put("pubtime", ma.group("time"));
+				
+				ma = getSource.matcher(e.html());
+				if (ma.find())
+				{
+					dic.put("fromsite",ma.group("source"));
+					dic.put("fromurl", ma.group("url"));
+				}
+				break;
+			}
+		}
+			
 	}
 
 	@Override

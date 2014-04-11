@@ -88,6 +88,7 @@ public abstract class WebCrawler implements PageVisitor {
 		dic.put("lastrefresh", new Date());
 		
 		siteProcessor(d,dic);
+		m.insertData("site" + getName(), dic);
 		System.out.println(d.baseUri() + " crawled.");
 		
 	}
