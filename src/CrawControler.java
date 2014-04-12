@@ -1,9 +1,8 @@
-import crawler.Crawler163;
-import crawler.CrawlerXinhuanet;
-import crawler.WebCrawler;
 import net.vidageek.crawler.PageCrawler;
 import net.vidageek.crawler.config.CrawlerConfiguration;
 import net.vidageek.crawler.visitor.DoesNotFollowVisitedUrlVisitor;
+import crawler.Crawler163;
+import crawler.WebCrawler;
 
 
 public class CrawControler {

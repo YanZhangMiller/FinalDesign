@@ -1,11 +1,8 @@
 package crawler;
-import java.util.Date;
 import java.util.Dictionary;
-import java.util.Hashtable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import net.vidageek.crawler.Page;
 import net.vidageek.crawler.Status;
 import net.vidageek.crawler.Url;
 
@@ -13,7 +10,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import tools.MySql;
 import tools.UrlProcessor;
 
 
