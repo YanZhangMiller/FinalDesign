@@ -11,9 +11,8 @@ import net.vidageek.crawler.page.OkPage;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-
-import tools.MySql;
-import tools.UrlProcessor;
+import org.tools.buaa.MySql;
+import org.tools.buaa.UrlProcessor;
 
 
 

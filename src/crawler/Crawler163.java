@@ -9,8 +9,7 @@ import net.vidageek.crawler.Url;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-
-import tools.UrlProcessor;
+import org.tools.buaa.UrlProcessor;
 
 
 public class Crawler163 extends WebCrawler{

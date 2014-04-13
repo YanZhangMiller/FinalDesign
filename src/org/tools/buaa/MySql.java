@@ -1,4 +1,4 @@
-package tools;
+package org.tools.buaa;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
