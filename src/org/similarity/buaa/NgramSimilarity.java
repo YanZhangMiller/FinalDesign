@@ -8,7 +8,7 @@ import org.tools.buaa.News;
 
 public class NgramSimilarity implements Similarity {
 
-	static double[] weights = {0,0,1};
+	static double[] weights = {0,0.25,0.75,0,0};
 	@Override
 	public double getSimScore(News x, News y) {
 		// TODO Auto-generated method stub
