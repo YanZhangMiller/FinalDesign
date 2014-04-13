@@ -1,4 +1,4 @@
-package crawler;
+package org.crawler.buaa;
 import java.util.Date;
 import java.util.Dictionary;
 import java.util.regex.Matcher;

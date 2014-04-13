@@ -1,4 +1,4 @@
-package crawler;
+package org.crawler.buaa;
 
 import java.util.Dictionary;
 

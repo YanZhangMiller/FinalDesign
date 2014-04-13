@@ -81,4 +81,16 @@ public class NgramSimilarity implements Similarity {
 		text = text.replaceAll("\\s+", " ");
 		return text;
 	}
+	
+	
+	public static void main(String []args)
+	{
+		Similarity sim = new NgramSimilarity();
+		News x = new News("","新华网北京4月11日电（记者刘华）国家主席习近平11日在人民大会堂会见澳大利亚总理阿博特。","");
+		News y = new News("","新华网北京4月11日电 国家主席习近平11日在人民大会堂会见澳大利亚总理阿博特。","");
+		
+		
+		System.out.println(x.content + "\n" + y.content);
+		System.out.println(sim.getSimScore(x, y));
+	}
 }
