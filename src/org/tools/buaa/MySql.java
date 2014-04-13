@@ -21,6 +21,12 @@ public class MySql {
 	static final String createTable = " (url varchar(100) key, title varchar(50), content text, html text, keywords varchar(50), posurl varchar(100), possite varchar(20), fromurl varchar(100), fromsite varchar(20), pubtime datetime, lastrefresh datetime, processed boolean )";
     static final String insertData = " (url,title,content,html,keywords,posurl,possite,fromurl,fromsite,pubtime,lastrefresh,processed) values( ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? )";
     static final String[] TableItem = { "url","title","content","html","keywords","posurl","possite","fromurl","fromsite","pubtime","lastrefresh","processed"};
+	boolean isCover = false;
+    public void setCover(boolean isCover) {
+		this.isCover = isCover;
+	}
+
+
 	Connection conn;
 	PreparedStatement pst;
 	String InsertTable = "";
@@ -34,7 +40,7 @@ public class MySql {
 		catch (Exception e){}
 	}
 	
-	public boolean insertData(String table,Dictionary<String,Object> Data)
+	public synchronized boolean insertData(String table,Dictionary<String,Object> Data)
 	{
 		try 
 		{
@@ -75,6 +81,8 @@ public class MySql {
 					pst.executeUpdate();
 					break;
 				case 1062:
+					if (!isCover)
+						break;
 					PreparedStatement q = conn.prepareStatement("delete from " + table + " where url = ?");
 					q.setObject(1, Data.get("url"));
 					q.executeUpdate();
@@ -95,7 +103,7 @@ public class MySql {
 		return true;
 	}
 	
-	public boolean isExist(String table,String key)
+	public synchronized boolean isExist(String table,String key)
 	{
 		try
 		{
@@ -113,7 +121,7 @@ public class MySql {
 		catch (Exception ex){}
 		return false;
 	}
-	public List<String> getEmptyRows(String table,Date d)
+	public synchronized List<String> getEmptyRows(String table,Date d)
 	{
 		List<String> ret = new ArrayList<String>();
 		try

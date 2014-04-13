@@ -51,6 +51,9 @@ public abstract class WebCrawler implements PageVisitor {
 	public abstract void siteProcessor(Document d,Dictionary<String,Object> dic);
 	public void visit(Page page)
 	{
+		if (page == null)
+			return;
+		
 		Document d = Jsoup.parse(page.getContent(),page.getUrl());
 		Dictionary<String,Object> dic = new Hashtable<String,Object>();
 		System.out.println("crawling: " + d.baseUri());
