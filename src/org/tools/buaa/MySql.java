@@ -20,8 +20,12 @@ public class MySql {
 	static final String pswd="925418";
 	static final String createTable = " (url varchar(100) key, title varchar(50), content text, html text, keywords varchar(50), posurl varchar(100), possite varchar(20), fromurl varchar(100), fromsite varchar(20), pubtime datetime, lastrefresh datetime, processed boolean )";
     static final String insertData = " (url,title,content,html,keywords,posurl,possite,fromurl,fromsite,pubtime,lastrefresh,processed) values( ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? )";
-    static final String[] TableItem = { "url","title","content","html","keywords","posurl","possite","fromurl","fromsite","pubtime","lastrefresh","processed"};
+    static final String[] tableItem = { "url","title","content","html","keywords","posurl","possite","fromurl","fromsite","pubtime","lastrefresh","processed"};
 	boolean isCover = false;
+	/**
+	 * 
+	 * @param isCover overwrite the records in the database if is set to true. 
+	 */
     public void setCover(boolean isCover) {
 		this.isCover = isCover;
 	}
@@ -39,7 +43,12 @@ public class MySql {
 		}
 		catch (Exception e){}
 	}
-	
+	/**
+	 * 
+	 * @param table 
+	 * @param Data
+	 * @return true if succeed.
+	 */
 	public synchronized boolean insertData(String table,Dictionary<String,Object> Data)
 	{
 		try 
@@ -56,15 +65,15 @@ public class MySql {
 			}
 			
 
-			for (int i=0;i<TableItem.length;i++)
+			for (int i=0;i<tableItem.length;i++)
 			{
-				if (Data.get(TableItem[i])==null)
+				if (Data.get(tableItem[i])==null)
 				{
 					pst.setObject(i + 1, null);
 				}
 				else
 				{
-					pst.setObject(i + 1, Data.get(TableItem[i]));
+					pst.setObject(i + 1, Data.get(tableItem[i]));
 				}
 			}
 			pst.executeUpdate();
@@ -82,7 +91,7 @@ public class MySql {
 					break;
 				case 1062:
 					if (!isCover)
-						break;
+						return false;
 					PreparedStatement q = conn.prepareStatement("delete from " + table + " where url = ?");
 					q.setObject(1, Data.get("url"));
 					q.executeUpdate();
@@ -140,16 +149,116 @@ public class MySql {
 		
 		return ret;
 	}
+	/**
+	 * get next count unprocessed records.
+	 * 
+	 * @param table data table to get unprocessed data. 
+	 * @param count number of unprocessed records to get.
+	 * @return return Array of Dictionary contains records in table. null if errors occur.
+	 */
+	public synchronized List<Dictionary<String,Object>> getUnprocessed(String table,int count)
+	{
+		if (count<=0)
+			return new ArrayList<Dictionary<String,Object>>();
+		try
+		{
+			if (conn == null || !conn.isValid(10))
+			{
+				conn.close();
+				conn = DriverManager.getConnection(url,usr,pswd);
+			}
+			PreparedStatement p = conn.prepareStatement("select * from " + table + " where processed = 0 or processed is null order by pubtime desc limit ?");
+			p.setObject(1, count);
+			List<Dictionary<String,Object>>ret = new ArrayList<Dictionary<String,Object>>();
+			ResultSet rs = p.executeQuery();
+			while (rs.next())
+			{
+				Dictionary<String,Object> dic = new Hashtable<String,Object>();
+				for (String x : tableItem)
+				{
+					if(rs.getObject(x)!=null)
+						dic.put(x, rs.getObject(x));
+				}
+				ret.add(dic);
+			}
+			
+			return ret;			
+		} catch (Exception ex) {}
+		return null;
+	}
+
+	/**
+	 * Delete url in table.
+	 * @param table
+	 * @param url primary key
+	 */
+	public synchronized void delete(String table,String url)
+	{
+		try
+		{
+			if (conn == null || !conn.isValid(10))
+			{
+				conn.close();
+				conn = DriverManager.getConnection(url,usr,pswd);
+			}
+			PreparedStatement p = conn.prepareStatement("delete from " + table + " where url = ?");
+			p.setObject(1, url);
+			p.executeUpdate();
+		} catch (Exception ex) {}
+	}
 	
-	public static void main(String[] args)  {
+	
+	/**
+	 * Move the record form tableFrom to tableTo.
+	 * 
+	 * @param tableFrom	Source table.
+	 * @param tableTo Destination table.
+	 * @param url
+	 */
+	public synchronized void moveTo(String tableFrom,String tableTo,String url)
+	{
+		try
+		{
+			if (conn == null || !conn.isValid(10))
+			{
+				conn.close();
+				conn = DriverManager.getConnection(url,usr,pswd);
+			}
+			PreparedStatement p = conn.prepareStatement("select * from " + tableFrom + " where url = ?");
+			
+			p.setObject(1, url);
+			ResultSet rs = p.executeQuery();
+			if (rs.next())
+			{
+				Dictionary<String,Object> dic = new Hashtable<String,Object>();
+				for(String x: tableItem)
+				{
+					
+					if (rs.getObject(x)!=null)
+						dic.put(x, rs.getObject(x));
+				}
+				this.insertData(tableTo, dic);
+				this.delete(tableFrom, url);
+			}
+						
+		} catch (Exception ex) {ex.printStackTrace();}
+	}
+	
+	public static void main(String[] args) throws SQLException  {
 		// TODO Auto-generated method stub
 		MySql m = new MySql();
 		Dictionary<String,Object> d = new Hashtable<String,Object>();
-		d.put("url", "www.qq.com");
+		d.put("url", "www.qq.com1");
 		d.put("title", "mainpage");
 		d.put("lastrefresh",new Date());
 		d.put("pubtime",new Date());
 		m.insertData("siteww", d);
+		
+		for(Dictionary<String,Object>x : m.getUnprocessed("siteww", -5))
+		{
+			System.out.println(x.get("url"));
+		}
+		m.moveTo("siteww", "error", "www.qq.com");
 		
 	}
 	
@@ -157,6 +266,7 @@ public class MySql {
 	protected void finalize() throws Throwable {  
 	    super.finalize();  
 	    conn.close();
-	}  
+	}
+	
 
 }
