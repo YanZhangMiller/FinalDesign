@@ -244,6 +244,19 @@ public class MySql {
 		} catch (Exception ex) {ex.printStackTrace();}
 	}
 	
+	public synchronized List<String> getTables()
+	{
+		try
+		{
+			if (conn == null || !conn.isValid(10))
+			{
+				conn.close();
+				conn = DriverManager.getConnection(url,usr,pswd);
+			}
+			PreparedStatement p = conn.prepareStatement("show tables");
+		}
+		catch (Exception e){}
+	}
 	public static void main(String[] args) throws SQLException  {
 		// TODO Auto-generated method stub
 		MySql m = new MySql();
