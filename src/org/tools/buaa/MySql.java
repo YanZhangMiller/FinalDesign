@@ -4,11 +4,14 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.List;
+
+
 
 
 
@@ -246,6 +249,7 @@ public class MySql {
 	
 	public synchronized List<String> getTables()
 	{
+		List<String> ret = new ArrayList<String>();
 		try
 		{
 			if (conn == null || !conn.isValid(10))
@@ -254,8 +258,16 @@ public class MySql {
 				conn = DriverManager.getConnection(url,usr,pswd);
 			}
 			PreparedStatement p = conn.prepareStatement("show tables");
+			
+			ResultSet rs = p.executeQuery();
+			
+			while (rs.next())
+			{
+				ret.add(rs.getString(1));
+			}
 		}
-		catch (Exception e){}
+		catch (Exception e){e.printStackTrace();}
+		return ret;
 	}
 	public static void main(String[] args) throws SQLException  {
 		// TODO Auto-generated method stub
@@ -271,7 +283,8 @@ public class MySql {
 		{
 			System.out.println(x.get("url"));
 		}
-		m.moveTo("siteww", "error", "www.qq.com");
+		//m.moveTo("siteww", "error", "www.qq.com");
+		System.out.println(m.getTables());
 		
 	}
 	
