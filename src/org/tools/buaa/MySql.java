@@ -277,7 +277,7 @@ public class MySql {
 		d.put("title", "mainpage");
 		d.put("lastrefresh",new Date());
 		d.put("pubtime",new Date());
-		m.insertData("siteww", d);
+		m.insertData("siteqq", d);
 		
 		for(Dictionary<String,Object>x : m.getUnprocessed("siteww", -5))
 		{
