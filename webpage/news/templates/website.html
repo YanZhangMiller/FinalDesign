@@ -1,0 +1,11 @@
+[
+    {% for item in table %}
+        {
+        "site": "{{ item.site }}",
+        "name": "{{ item.name }}"
+        }
+        {% if forloop.revcounter0 %}
+        ,
+        {% endif %}
+    {% endfor %}
+]

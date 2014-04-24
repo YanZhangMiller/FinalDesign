@@ -1,6 +1,29 @@
 /**
  * Created by Yan on 2014/3/31.
  */
+var baseUrl = "http://127.0.0.1:8000/newspath/"
+
+$(function() {
+    var website = {}
+    var getWebsite = function() {
+        $.get( baseUrl + "websites", function( data ) {
+            website = {}
+            for (var i=0;i<data.length;i++){
+                website[data[i].site] = {"name":data[i].name,"selected":true}
+            }
+            alert(JSON.stringify(website))
+        }, "json" );
+    }
+    getWebsite()
+    var tree = getTree(graphe);
+    var list = getNodeList(tree);
+    //list = check(list)
+    //document.write(JSON.stringify(list));
+    var d = document.getElementById("newspath");
+    if (paper == undefined)
+        var paper = Raphael(d.offsetLeft, d.offsetTop, d.offsetWidth, d.offsetHeight);
+    drawTree(paper,list)
+});
 var circles = {},
     text = {},
     connections = [],
