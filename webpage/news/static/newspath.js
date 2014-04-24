@@ -11,7 +11,46 @@ $(function() {
             for (var i=0;i<data.length;i++){
                 website[data[i].site] = {"name":data[i].name,"selected":true}
             }
-            alert(JSON.stringify(website))
+            var str = "<span site='All'>全部</span>"
+            for (var i in website)str += "|<span site='" + i + "'>" + website[i]["name"] + "</span>"
+            $("#website").append(str)
+            $("#website > span").css("font-weight","bold")
+            $("#website > span[site!='All']").click(function(){
+                var site = $(this).attr("site")
+                website[site].selected = !website[site].selected
+                if (website[site].selected){
+                    $(this).css("font-weight","bold")
+                }
+                else
+                    $(this).css("font-weight","normal")
+                var flag = true
+                for (var i in website)
+                    if (!website[i].selected && i!='All')
+                    {
+                        flag = false
+                        break
+                    }
+                website['All'].selected = flag
+                if (flag)
+                    $("#website span[site='All']").css("font-weight","bold")
+                else
+                    $("#website span[site='All']").css("font-weight","normal")
+            })
+            website["All"] = {"selected":true,"name":"全部"}
+            $("#website span[site='All']").click(function(){
+                website["All"].selected = !website["All"].selected
+                if (website["All"].selected)
+                {
+                    $("#website > span").css("font-weight","bold")
+                    for (var i in website) website[i].selected = true
+                }
+                else
+                {
+                    $("#website > span").css("font-weight","normal")
+                    for (var i in website) website[i].selected = false
+                }
+            })
+            //alert(JSON.stringify(website))
         }, "json" );
     }
     getWebsite()

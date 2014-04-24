@@ -45,6 +45,7 @@
                 <marker date="1398336249764" expanded="true" signature="772:872" placeholder="select * fro..missing_value..." />
                 <marker date="1398336249764" expanded="true" signature="772:785" placeholder="select * fro..." />
                 <marker date="1398336249764" expanded="true" signature="772:905" placeholder="select * fro..missing_value..." />
+                <marker date="1398336249764" expanded="true" signature="1236:1287" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -53,7 +54,7 @@
       <file leaf-file-name="newspath.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/newspath.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="21" selection-start="2398" selection-end="2398" vertical-scroll-proportion="-29.857143" vertical-offset="0" max-vertical-offset="1235">
+            <state line="44" column="21" selection-start="2398" selection-end="2398" vertical-scroll-proportion="-23.75" vertical-offset="171" max-vertical-offset="1235">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -72,7 +73,7 @@
       <file leaf-file-name="newspath.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/newspath.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="24" selection-start="401" selection-end="401" vertical-scroll-proportion="0.2813212" vertical-offset="0" max-vertical-offset="5434">
+            <state line="27" column="55" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.58428246" vertical-offset="0" max-vertical-offset="6175">
               <folding />
             </state>
           </provider>
@@ -523,6 +524,7 @@
             <marker date="1398336249764" expanded="true" signature="772:872" placeholder="select * fro..missing_value..." />
             <marker date="1398336249764" expanded="true" signature="772:785" placeholder="select * fro..." />
             <marker date="1398336249764" expanded="true" signature="772:905" placeholder="select * fro..missing_value..." />
+            <marker date="1398336249764" expanded="true" signature="1236:1287" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -560,6 +562,7 @@
             <marker date="1398336249764" expanded="true" signature="772:872" placeholder="select * fro..missing_value..." />
             <marker date="1398336249764" expanded="true" signature="772:785" placeholder="select * fro..." />
             <marker date="1398336249764" expanded="true" signature="772:905" placeholder="select * fro..missing_value..." />
+            <marker date="1398336249764" expanded="true" signature="1236:1287" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -588,6 +591,7 @@
             <marker date="1398336249764" expanded="true" signature="772:872" placeholder="select * fro..missing_value..." />
             <marker date="1398336249764" expanded="true" signature="772:785" placeholder="select * fro..." />
             <marker date="1398336249764" expanded="true" signature="772:905" placeholder="select * fro..missing_value..." />
+            <marker date="1398336249764" expanded="true" signature="1236:1287" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -616,6 +620,7 @@
             <marker date="1398336249764" expanded="true" signature="772:872" placeholder="select * fro..missing_value..." />
             <marker date="1398336249764" expanded="true" signature="772:785" placeholder="select * fro..." />
             <marker date="1398336249764" expanded="true" signature="772:905" placeholder="select * fro..missing_value..." />
+            <marker date="1398336249764" expanded="true" signature="1236:1287" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -637,6 +642,7 @@
             <marker date="1398336249764" expanded="true" signature="772:872" placeholder="select * fro..missing_value..." />
             <marker date="1398336249764" expanded="true" signature="772:785" placeholder="select * fro..." />
             <marker date="1398336249764" expanded="true" signature="772:905" placeholder="select * fro..missing_value..." />
+            <marker date="1398336249764" expanded="true" signature="1236:1287" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -658,6 +664,7 @@
             <marker date="1398336249764" expanded="true" signature="772:872" placeholder="select * fro..missing_value..." />
             <marker date="1398336249764" expanded="true" signature="772:785" placeholder="select * fro..." />
             <marker date="1398336249764" expanded="true" signature="772:905" placeholder="select * fro..missing_value..." />
+            <marker date="1398336249764" expanded="true" signature="1236:1287" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -716,13 +723,14 @@
             <marker date="1398336249764" expanded="true" signature="772:872" placeholder="select * fro..missing_value..." />
             <marker date="1398336249764" expanded="true" signature="772:785" placeholder="select * fro..." />
             <marker date="1398336249764" expanded="true" signature="772:905" placeholder="select * fro..missing_value..." />
+            <marker date="1398336249764" expanded="true" signature="1236:1287" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/newspath.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="21" selection-start="2398" selection-end="2398" vertical-scroll-proportion="-29.857143" vertical-offset="0" max-vertical-offset="1235">
+        <state line="44" column="21" selection-start="2398" selection-end="2398" vertical-scroll-proportion="-23.75" vertical-offset="171" max-vertical-offset="1235">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -739,7 +747,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/newspath.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="24" selection-start="401" selection-end="401" vertical-scroll-proportion="0.2813212" vertical-offset="0" max-vertical-offset="5434">
+        <state line="27" column="55" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.58428246" vertical-offset="0" max-vertical-offset="6175">
           <folding />
         </state>
       </provider>
