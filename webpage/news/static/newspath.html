@@ -22,37 +22,10 @@
     <div>
         <div id="newspath" style="width:1000px;height:500px;border-style:solid"></div>
         <div style="border: dotted red">
-            <p><input id="searchText" type="text"/> <input type="date" name="user_date" />~<input type="date" name="user_date" /><button id="searchBtn" type="button">搜索新闻</button></p>
+            <p><input id="searchText" type="text"/> <input type="date" id="from_date" />~<input type="date" id="to_date" /><button id="searchBtn" type="button">搜索新闻</button></p>
             <p id="website"></p>
         </div>
-        <div id="newsHtml" style="border:solid;width:500px"></div>
-        <div>
-            <ul>
-                <li>
-                    {% load staticfiles %}
-                    <img src="{% static "pic/logoxinhuanet.jpg" %}" />
-                    <h3>中英4艘舰船继续复核疑似脉冲信号</h3>
-                    <p>新华网“海巡０１”轮４月８日电（记者陈炜伟）“海巡０１”轮现场指挥部消息，北京时间８日上午，根据中国海上搜救中心的统一部署，中英４艘舰船在南纬２５、东经１０１附近水域，对日前“海巡０１”侦听到的疑似黑匣子信号点扩大范围，开展第二天的复核扫测。</p>
-                    <p style="font-size: 1.5em">来源：<b style="color: blue">原创</b></p>
-                </li>
-
-                <li>
-                    {% load staticfiles %}
-                    <img src="{% static "pic/logo163.png" %}" />
-                    <h3>中英4舰船继续复核疑似脉冲信号</h3>
-                    <p>新华网“海巡01”轮4月8日电 “海巡01”轮现场指挥部消息，北京时间8日上午，根据中国海上搜救中心的统一部署，中英4艘舰船在南纬25、东经101附近水域，对日前“海巡01”侦听到的疑似黑匣子信号点扩大范围，开展第二天的复核扫测。</p>
-                    <p style="font-size: 1.5em">来源：<a href="#"><b style="color: blue">新华网</b></a></p>
-                </li>
-
-                <li>
-                    {% load staticfiles %}
-                    <img src="{% static "pic/logoqq.jpg" %}" />
-                    <h3>中英4舰船继续复核疑似脉冲信号</h3>
-                    <p>新华网“海巡01”轮4月8日电（记者陈炜伟）“海巡01”轮现场指挥部消息，北京时间8日上午，根据中国海上搜救中心的统一部署，中英4艘舰船在南纬25、东经101附近水域，对日前“海巡01”侦听到的疑似黑匣子信号点扩大范围，开展第二天的复核扫测。</p>
-                    <p style="font-size: 1.5em">来源：<a href="#"><b style="color: blue">新华网</b></a></p>
-                </li>
-            </ul>
-        </div>
+        <div id="newsHtml" style="border:solid;width:500px"><ul></ul></div>
     </div>
 <script type="text/javascript">
 </script>

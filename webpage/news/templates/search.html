@@ -1,0 +1,21 @@
+[
+{% autoescape off %}
+    {% for item in news  %}
+        {
+            "url": {{ item.url }},
+            "title": {{ item.title }},
+            "content": {{ item.content }},
+            "possite" : {{ item.possite }},
+            "posurl" : {{ item.posurl }},
+            "fromsite" : {{ item.fromsite }},
+            "html" : {{ item.html }},
+            "fromurl" : {{ item.fromurl }},
+            "pubtime" : {{ item.pubtime }},
+            "site" : {{ item.site }}
+        }
+        {% if forloop.revcounter0 %}
+        ,
+        {% endif %}
+    {% endfor %}
+{% endautoescape  %}
+]

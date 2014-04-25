@@ -1,10 +1,23 @@
 /**
  * Created by Yan on 2014/3/31.
  */
-var baseUrl = "http://127.0.0.1:8000/newspath/"
-
+var baseUrl = "http://127.0.0.1:8000/newspath/",
+     website = {},
+     newsList = []
+var dateToString = function (date) {
+        return date.getFullYear() + "-" + ("0" + (date.getMonth() + 1)).slice(-2) + "-" + ("0" + date.getDate()).slice(-2)
+    },
+    liWrapper = function(news){
+        var str=
+            "<li url=\"" + news["url"] + "\">"
+            + "<img src=\"/static/pic/logo" + news["site"] + ".png\" />"
+            + "<h3>" + news["title"] + "</h3>"
+            + "<p>" + news["content"] +  "</p>"
+            + "<p>来源：" + (news["fromurl"] == news["url"] ? "原创" : news["fromsite"]) + "</p>"
+            + "</li>"
+        return str
+    }
 $(function() {
-    var website = {}
     var getWebsite = function() {
         $.get( baseUrl + "websites", function( data ) {
             website = {}
@@ -35,6 +48,7 @@ $(function() {
                     $("#website span[site='All']").css("font-weight","bold")
                 else
                     $("#website span[site='All']").css("font-weight","normal")
+                showNews(newsList,true)
             })
             website["All"] = {"selected":true,"name":"全部"}
             $("#website span[site='All']").click(function(){
@@ -49,11 +63,40 @@ $(function() {
                     $("#website > span").css("font-weight","normal")
                     for (var i in website) website[i].selected = false
                 }
+                showNews(newsList,true)
             })
-            //alert(JSON.stringify(website))
         }, "json" );
-    }
+        },
+        showNews = function(news,isclear){
+            var ul = $("#newsHtml ul")
+            if (isclear)
+                ul.empty()
+            for (var i = 0;i<news.length;i++)
+            {
+                if (website[news[i]["site"]].selected)
+                    ul.append(liWrapper(news[i]))
+            }
+            $("#newsHtml ul > li").click(function(){
+                alert($(this).attr("url"))
+            })
+
+        }
     getWebsite()
+    $("#searchBtn").click(function(){
+        var from_date = $("#from_date").val(),
+            to_date = $("#to_date").val(),
+            text = $("#searchText").text()
+        $.get(baseUrl + "search_news" ,{"newsname" : text,"fromdate":from_date,"todate":to_date},function(data){
+            newsList = data
+            showNews(newsList,true)
+        },"json")
+    })
+
+    var today = new Date()
+
+    $("#to_date").val(dateToString(today))
+    today.setDate(today.getDate() - 3)
+    $("#from_date").val("2014-01-01")
     var tree = getTree(graphe);
     var list = getNodeList(tree);
     //list = check(list)
