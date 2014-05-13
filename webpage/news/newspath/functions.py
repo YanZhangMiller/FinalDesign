@@ -34,5 +34,5 @@ def packJson(data):
             except:
                 x[i] = json.dumps(x[i].strftime("%Y-%m-%d"))
         news.append({"url": x[0], "title": x[1], "content": x[2], "html": x[3], "pubtime": x[9], "posurl": x[5],
-                     "possite": x[6], "fromurl": x[7], "fromsite": x[8],"site" : x[12]})
+                     "possite": x[6], "fromurl": x[7], "fromsite": x[8],"site" : x[12 ]})
     return news
