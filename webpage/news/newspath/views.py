@@ -30,7 +30,14 @@ def search_news(request):
 
 def search_graph(request):
     url = request.GET.get("url",0)
+    l = []
+    return render_to_response("graph.html",{"graph":l})
 
+def getParent(id):
+    pass
+
+def getChildren(id):
+    pass
 
 
 def search_site(request):
