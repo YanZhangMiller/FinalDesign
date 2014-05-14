@@ -1,3 +1,46 @@
-{
+[
+{% autoescape off %}
+    {
+    {% for key,value in graph.items  %}
 
-}
+            {{ key }}:
+            [
+                {% for x in value %}
+                    {{ x }}
+                    {% if forloop.revcounter0 %}
+                        ,
+                    {% endif %}
+                {% endfor %}
+            ]
+
+
+        {% if forloop.revcounter0 %}
+        ,
+        {% endif %}
+    {% endfor %}
+    }
+,
+   {
+   {% for item in nodes %}
+       {{ item.ID }}:
+        {
+            "ID": {{ item.ID }},
+            "Website": {{ item.Website }},
+            "ReleaseDateTime": {{ item.ReleaseDateTime }},
+            "Title" : {{ item.Title }},
+            "Author" : {{ item.Author }},
+            "Content" : {{ item.Content }},
+            "Hot" : {{ item.Hot }},
+            "Source" : {{ item.Source }},
+            "UpdateDateTime" : {{ item.UpdateDateTime }},
+            "Geo" : {{ item.Geo }},
+            "Sentiment" : {{ item.Sentiment }},
+            "Summary" : {{ item.Summary }}
+        }
+        {% if forloop.revcounter0 %}
+        ,
+        {% endif %}
+   {% endfor %}
+   }
+{% endautoescape  %}
+]

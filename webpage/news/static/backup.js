@@ -81,3 +81,11 @@ var nodes = {
         "title" : "7"
     }
 }
+
+
+var selectItem = function (){
+    if (selected != undefined && circles[selected]!=undefined)
+    {
+        circles[selected].glow();
+    }
+};

@@ -3,6 +3,7 @@ from django.shortcuts import render_to_response
 from newspath.functions import *
 from django.shortcuts import HttpResponse
 from django.db import connection, transaction
+import json
 # Create your views here.
 
 
@@ -29,15 +30,94 @@ def search_news(request):
 
 
 def search_graph(request):
-    url = request.GET.get("url",0)
+    url = request.GET.get("url", 0)
+    cursor = connection.cursor()
     l = []
-    return render_to_response("graph.html",{"graph":l})
+    graph = {}
+    if url != 0:
+        root = url
+        cur = url
+        while cur:
+            cursor.execute("select sourceUrl from newsSource where ID=%s", [cur])
+            #print cursor.fetchone()[0]
+            try:
+                cur = cursor.fetchone()[0]
 
-def getParent(id):
-    pass
+                if cur:
+                    root = cur
+            except:
+                break
 
-def getChildren(id):
-    pass
+        nodes = [root]
+        l.append(root)
+        while len(nodes) > 0:
+            temp = []
+            for x in nodes:
+                key = json.dumps(x)
+                cursor.execute("select ID from newsSource where sourceUrl=%s", [x])
+                for data in cursor.fetchall():
+                    value = json.dumps(data[0])
+                    temp.append(data[0])
+                    l.append(data[0])
+                    try:
+                        graph[key].append(value)
+                    except:
+                        graph[key] = [value]
+            nodes = temp
+        n = get_data(l)
+    return render_to_response("graph.html", {"graph": graph, "nodes": n})
+
+
+def get_parent(id):
+    cursor = connection.cursor()
+    ret = []
+    while id != "":
+        cursor.execute("select sourceUrl from newsSource where ID=%s", [id])
+        try:
+            p = cursor.fetchone()[0]
+            if p != "":
+                ret.append(p)
+                id = p
+        except:
+            break
+    return ret
+
+
+def get_children(id):
+    cursor = connection.cursor()
+    ret = []
+    nodes = [id]
+    while nodes.count() > 0:
+        temp = []
+        for x in nodes:
+            cursor.execute("select ID from newsSource where sourceUrl=%s", [x])
+            for data in cursor.fetchall():
+                temp.append(data[0])
+                ret.append(data[0])
+        nodes = temp
+    return ret
+
+
+def get_data(l):
+    cursor = connection.cursor()
+    data = []
+    for x in l:
+        cursor.execute("select * from newsDetail where ID=%s", [x])
+        try:
+            row = list(cursor.fetchone())
+            for i in range(0, len(row)):
+                if not row[i]:
+                    row[i] = ""
+                try:
+                    row[i] = json.dumps(row[i])
+                except:
+                    row[i] = json.dumps(row[i].strftime("%Y-%m-%d"))
+            data.append(
+                dict(ID=row[0], Website=row[1], ReleaseDateTime=row[2], Title=row[3], Author=row[4], Content=row[5],
+                     Hot=row[6], Source=row[7], UpdateDateTime=row[8], Geo=row[9], Sentiment=row[10], Summary=row[11]))
+        except:
+            pass
+    return data
 
 
 def search_site(request):

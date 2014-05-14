@@ -1,7 +1,7 @@
 /**
  * Created by Yan on 2014/3/31.
  */
-var graphe = {
+var graph = {
     "0": ["1","2"]
 };
 var nodes = {
