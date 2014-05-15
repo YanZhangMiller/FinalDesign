@@ -26,97 +26,8 @@ var baseUrl = "http://127.0.0.1:8000/newspath/",
     paper,
     website = {},
     newsList = [];
-var dateToString = function (date) {
-        return date.getFullYear() + "-" + ("0" + (date.getMonth() + 1)).slice(-2) + "-" + ("0" + date.getDate()).slice(-2)
-    },
-    liWrapper = function(news){
-        return "<li url=\"" + news["url"] + "\">"
-            + "<img src=\"/static/pic/logo" + news["site"] + ".png\" />"
-            + "<h3>" + news["title"] + "</h3>"
-            + "<p>" + news["content"] + "</p>"
-            + "<p>来源：" + (news["fromurl"] == news["url"] ? "原创" : news["fromsite"]) + "</p>"
-            + "</li>"
-    };
+
 $(function() {
-    /*var getWebsite = function() {
-        $.get( baseUrl + "websites", function( data ) {
-            website = {}
-            for (var i=0;i<data.length;i++){
-                website[data[i].site] = {"name":data[i].name,"selected":true}
-            }
-            var str = "<span site='All'>全部</span>"
-            for (var i in website)str += "|<span site='" + i + "'>" + website[i]["name"] + "</span>"
-            $("#website").append(str)
-            $("#website > span").css("font-weight","bold")
-            $("#website > span[site!='All']").click(function(){
-                var site = $(this).attr("site")
-                website[site].selected = !website[site].selected
-                if (website[site].selected){
-                    $(this).css("font-weight","bold")
-                }
-                else
-                    $(this).css("font-weight","normal")
-                var flag = true
-                for (var i in website)
-                    if (!website[i].selected && i!='All')
-                    {
-                        flag = false
-                        break
-                    }
-                website['All'].selected = flag
-                if (flag)
-                    $("#website span[site='All']").css("font-weight","bold")
-                else
-                    $("#website span[site='All']").css("font-weight","normal")
-                showNews(newsList,true)
-            })
-            website["All"] = {"selected":true,"name":"全部"}
-            $("#website span[site='All']").click(function(){
-                website["All"].selected = !website["All"].selected
-                if (website["All"].selected)
-                {
-                    $("#website > span").css("font-weight","bold")
-                    for (var i in website) website[i].selected = true
-                }
-                else
-                {
-                    $("#website > span").css("font-weight","normal")
-                    for (var i in website) website[i].selected = false
-                }
-                showNews(newsList,true)
-            })
-        }, "json" );
-        },
-        showNews = function(news,isclear){
-            var ul = $("#newsHtml ul")
-            if (isclear)
-                ul.empty()
-            for (var i = 0;i<news.length;i++)
-            {
-                if (website[news[i]["site"]].selected)
-                    ul.append(liWrapper(news[i]))
-            }
-            $("#newsHtml ul > li").click(function(){
-                alert($(this).attr("url"))
-            })
-
-        }
-    getWebsite()
-    $("#searchBtn").click(function(){
-        var from_date = $("#from_date").val(),
-            to_date = $("#to_date").val(),
-            text = $("#searchText").text()
-        $.get(baseUrl + "search_news" ,{"newsname" : text,"fromdate":from_date,"todate":to_date},function(data){
-            newsList = data
-            showNews(newsList,true)
-        },"json")
-    })
-
-    var today = new Date()
-
-    $("#to_date").val(dateToString(today))
-    today.setDate(today.getDate() - 3)
-    $("#from_date").val("2014-01-01")*/
     var show_graph = function(id){
         $.get(baseUrl + "search_graph" ,{"url" : id },function(data){
             graph = data[0];
@@ -127,22 +38,21 @@ $(function() {
             if (paper == undefined)
                 var paper = Raphael(d.offsetLeft, d.offsetTop, d.offsetWidth, d.offsetHeight);
     //console.log(JSON.stringify(list))
-            console.log(JSON.stringify(list))
-            console.log(JSON.stringify(nodes))
+            //console.log(JSON.stringify(list))
+            //console.log(JSON.stringify(nodes))
             drawTree(paper,list)
+            $("#newscontent").html(wrapContent(id));
         },"json")
     };
-    //list = check(list)
     show_graph("4");
-
 });
 var circles = {},
     text = {},
     connections = [],
     r = 30,
     gap = 5,
-    margin = 30,
-    selected = undefined;
+    margin = 30;
+
 
 
 Raphael.fn.connection = function (obj1, obj2, line, bg) {
@@ -331,7 +241,7 @@ var drawNode = function (paper,node){
         dragger = function () {
             this.ox = this.type == "rect" ? this.attr("x") : this.attr("cx");
             this.oy = this.type == "rect" ? this.attr("y") : this.attr("cy");
-            this.animate({"fill-opacity": .2}, 500);
+            this.animate({"fill-opacity": .5}, 500);
         },
         move = function (dx, dy) {
             var att = this.type == "rect" ? {x: this.ox + dx, y: this.oy + dy} : {cx: this.ox + dx, cy: this.oy + dy};
@@ -344,13 +254,21 @@ var drawNode = function (paper,node){
             paper.safari();
         },
         up = function () {
-            this.animate({"fill-opacity": 0}, 500);
+            //this.animate({"fill-opacity": .2}, 500);
         };
-    circle.attr({fill: color, stroke: color, "fill-opacity": 0, "stroke-width": 2, cursor: "move"});
+    circle.attr({fill: color, stroke: color, "fill-opacity":.2, "stroke-width": 2, cursor: "move"});
     //console.log(node);
-    circle.text = paper.text(node.x,node.y,nodes[node.id]["Title"]);
+    circle.text = paper.text(node.x,node.y,nodes[node.id]["Website"]);
     circle.text.attr({ "font-size": 16,"font-weight": "bold"});
     circle.drag(move,dragger,up);
+    circle.mouseup(function(){
+        $("#newscontent").html(wrapContent(node.id));
+        //this.animate({"fill-opacity": .2}, 1500);
+        for(var c in circles)
+            circles[c].animate({"fill-opacity":.2},100);
+        this.animate({"fill-opacity":.7}, 500);
+        //console.log(wrapContent(node.id));
+    });
     return circle;
 };
 
@@ -381,3 +299,18 @@ var check = function (nodeList,fix){
     }
     return nodeList;
 };
+
+var wrapContent = function (id) {
+
+    //console.log(nodes[id])
+    //console.log(nodes[id].Author)
+    return "<h1>" + nodes[id].Title + "</h1>"
+        +"<p>作者:" + nodes[id].Author +"&nbsp;" + nodes[id].ReleaseDateTime + "</p>";
+}
+
+var resetConnection = function (paper){
+     for (var i = connections.length; i--;) {
+                paper.connection(connections[i]);
+            }
+     paper.safari();
+}

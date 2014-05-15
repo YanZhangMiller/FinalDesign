@@ -27,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newspath/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="21" selection-start="1544" selection-end="1544" vertical-scroll-proportion="0.6424682" vertical-offset="558" max-vertical-offset="2527">
+            <state line="11" column="45" selection-start="363" selection-end="363" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2527">
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <marker date="1400067423519" expanded="true" signature="662:791" placeholder="select * fro..missing_value..." />
@@ -40,15 +40,6 @@
                 <marker date="1400067423519" expanded="true" signature="2763:2805" placeholder="select ID fr..newsSource..." />
                 <marker date="1400067423519" expanded="true" signature="3073:3107" placeholder="select * fro..newsDetail..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="graph.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/graph.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="21" selection-start="469" selection-end="469" vertical-scroll-proportion="-4.071429" vertical-offset="342" max-vertical-offset="969">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -65,31 +56,34 @@
       <file leaf-file-name="newspath.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/newspath.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="476" selection-end="476" vertical-scroll-proportion="-2.607143" vertical-offset="174" max-vertical-offset="722">
-              <folding />
+            <state line="18" column="23" selection-start="1061" selection-end="1072" vertical-scroll-proportion="-9.392858" vertical-offset="79" max-vertical-offset="627">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/data.js">
+      <file leaf-file-name="graph.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/graph.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="40" selection-end="280" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="551">
+            <state line="29" column="39" selection-start="654" selection-end="654" vertical-scroll-proportion="-19.678572" vertical-offset="0" max-vertical-offset="969">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="newspath.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="newspath.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/newspath.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="12" selection-start="4170" selection-end="4170" vertical-scroll-proportion="-26.6" vertical-offset="0" max-vertical-offset="4009">
+            <state line="268" column="39" selection-start="9178" selection-end="9178" vertical-scroll-proportion="0.62068963" vertical-offset="1482" max-vertical-offset="2337">
               <folding>
-                <element signature="e#422#552#0" expanded="false" />
-                <element signature="e#584#923#0" expanded="false" />
-                <element signature="e#944#4023#0" expanded="false" />
-                <element signature="e#4879#7230#0" expanded="false" />
-                <element signature="e#7267#8649#0" expanded="false" />
+                <element signature="e#1264#3615#0" expanded="false" />
+                <element signature="e#3652#5034#0" expanded="false" />
+                <element signature="e#5068#6500#0" expanded="false" />
+                <element signature="e#6542#7711#0" expanded="false" />
+                <element signature="e#9298#10210#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -98,8 +92,10 @@
       <file leaf-file-name="backup.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/backup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="2" selection-start="2114" selection-end="2114" vertical-scroll-proportion="0.0" vertical-offset="1172" max-vertical-offset="1824">
-              <folding />
+            <state line="182" column="39" selection-start="5734" selection-end="5734" vertical-scroll-proportion="0.0" vertical-offset="1514" max-vertical-offset="2090">
+              <folding>
+                <element signature="e#2655#5734#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,13 +119,13 @@
         <option value="$PROJECT_DIR$/templates/website.html" />
         <option value="$PROJECT_DIR$/newspath/functions.py" />
         <option value="$PROJECT_DIR$/templates/search.html" />
-        <option value="$PROJECT_DIR$/static/newspath.html" />
         <option value="$PROJECT_DIR$/newspath/urls.py" />
-        <option value="$PROJECT_DIR$/static/backup.js" />
         <option value="$PROJECT_DIR$/templates/graph.html" />
         <option value="$PROJECT_DIR$/static/data.js" />
-        <option value="$PROJECT_DIR$/static/newspath.js" />
         <option value="$PROJECT_DIR$/newspath/views.py" />
+        <option value="$PROJECT_DIR$/static/backup.js" />
+        <option value="$PROJECT_DIR$/static/newspath.html" />
+        <option value="$PROJECT_DIR$/static/newspath.js" />
       </list>
     </option>
   </component>
@@ -356,27 +352,7 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="news" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -402,7 +378,27 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="news" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -509,8 +505,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32997763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15811966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15995117" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -518,11 +514,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -540,9 +536,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25641027" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -560,7 +556,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -580,17 +576,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/newspath/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="85" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="817">
-          <folding>
-            <marker date="1400034652360" expanded="true" signature="-1:-1" placeholder="select * fro..nameofsite..." />
-          </folding>
-        </state>
+        <state line="36" column="85" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="817" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/newspath.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="75" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="722">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -598,11 +593,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="79" column="39" selection-start="3224" selection-end="3224" vertical-scroll-proportion="0.0" vertical-offset="1501" max-vertical-offset="6992">
           <folding>
-            <element signature="e#422#552#0" expanded="false" />
-            <element signature="e#584#923#0" expanded="false" />
-            <element signature="e#944#4023#0" expanded="false" />
-            <element signature="e#4879#7230#0" expanded="false" />
-            <element signature="e#7267#8649#0" expanded="false" />
+            <element signature="e#1264#3615#0" expanded="false" />
+            <element signature="e#3652#5034#0" expanded="false" />
+            <element signature="e#5068#6500#0" expanded="false" />
+            <element signature="e#6542#7711#0" expanded="false" />
+            <element signature="e#9298#10210#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -638,17 +633,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/newspath/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="85" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="817">
-          <folding>
-            <marker date="1400034652360" expanded="true" signature="-1:-1" placeholder="select * fro..nameofsite..." />
-          </folding>
-        </state>
+        <state line="36" column="85" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="817" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/newspath.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="75" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="722">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -656,11 +650,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="79" column="39" selection-start="3224" selection-end="3224" vertical-scroll-proportion="0.0" vertical-offset="1501" max-vertical-offset="6992">
           <folding>
-            <element signature="e#422#552#0" expanded="false" />
-            <element signature="e#584#923#0" expanded="false" />
-            <element signature="e#944#4023#0" expanded="false" />
-            <element signature="e#4879#7230#0" expanded="false" />
-            <element signature="e#7267#8649#0" expanded="false" />
+            <element signature="e#1264#3615#0" expanded="false" />
+            <element signature="e#3652#5034#0" expanded="false" />
+            <element signature="e#5068#6500#0" expanded="false" />
+            <element signature="e#6542#7711#0" expanded="false" />
+            <element signature="e#9298#10210#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -696,17 +690,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/newspath/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="85" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="817">
-          <folding>
-            <marker date="1400034652360" expanded="true" signature="-1:-1" placeholder="select * fro..nameofsite..." />
-          </folding>
-        </state>
+        <state line="36" column="85" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="817" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/newspath.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="75" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="722">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -719,22 +712,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="79" column="39" selection-start="3224" selection-end="3224" vertical-scroll-proportion="0.0" vertical-offset="1501" max-vertical-offset="6992">
           <folding>
-            <element signature="e#422#552#0" expanded="false" />
-            <element signature="e#584#923#0" expanded="false" />
-            <element signature="e#944#4023#0" expanded="false" />
-            <element signature="e#4879#7230#0" expanded="false" />
-            <element signature="e#7267#8649#0" expanded="false" />
+            <element signature="e#1264#3615#0" expanded="false" />
+            <element signature="e#3652#5034#0" expanded="false" />
+            <element signature="e#5068#6500#0" expanded="false" />
+            <element signature="e#6542#7711#0" expanded="false" />
+            <element signature="e#9298#10210#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/newspath/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="50" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="551">
-          <folding>
-            <marker date="1400034652360" expanded="true" signature="-1:-1" placeholder="select * fro..nameofsite..." />
-          </folding>
-        </state>
+        <state line="10" column="50" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="551" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/newspath/views.py">
@@ -755,7 +744,10 @@
     <entry file="file://$PROJECT_DIR$/static/newspath.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="21" selection-start="2398" selection-end="2398" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="1235">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -763,11 +755,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="55" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="6175">
           <folding>
-            <element signature="e#422#552#0" expanded="false" />
-            <element signature="e#584#923#0" expanded="false" />
-            <element signature="e#944#4023#0" expanded="false" />
-            <element signature="e#4879#7230#0" expanded="false" />
-            <element signature="e#7267#8649#0" expanded="false" />
+            <element signature="e#1264#3615#0" expanded="false" />
+            <element signature="e#3652#5034#0" expanded="false" />
+            <element signature="e#5068#6500#0" expanded="false" />
+            <element signature="e#6542#7711#0" expanded="false" />
+            <element signature="e#9298#10210#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -789,11 +781,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/newspath/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="45" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="532">
-          <folding>
-            <marker date="1400034652360" expanded="true" signature="-1:-1" placeholder="select * fro..nameofsite..." />
-          </folding>
-        </state>
+        <state line="2" column="45" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="532" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/search.html">
@@ -961,16 +949,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/newspath/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="13" selection-start="570" selection-end="570" vertical-scroll-proportion="0.5052083" vertical-offset="203" max-vertical-offset="779">
-          <folding>
-            <marker date="1400034652360" expanded="true" signature="-1:-1" placeholder="select * fro..nameofsite..." />
-          </folding>
-        </state>
+        <state line="28" column="13" selection-start="570" selection-end="570" vertical-scroll-proportion="0.5052083" vertical-offset="203" max-vertical-offset="779" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/newspath.html">
+    <entry file="file://$PROJECT_DIR$/static/data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="476" selection-end="476" vertical-scroll-proportion="-2.607143" vertical-offset="174" max-vertical-offset="722">
+        <state line="3" column="0" selection-start="40" selection-end="280" vertical-scroll-proportion="0.098958336" vertical-offset="0" max-vertical-offset="576">
           <folding />
         </state>
       </provider>
@@ -982,43 +966,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/graph.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="21" selection-start="469" selection-end="469" vertical-scroll-proportion="-4.071429" vertical-offset="342" max-vertical-offset="969">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/backup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="2" selection-start="2114" selection-end="2114" vertical-scroll-proportion="0.0" vertical-offset="1172" max-vertical-offset="1824">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="40" selection-end="280" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="551">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/newspath.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="12" selection-start="4170" selection-end="4170" vertical-scroll-proportion="-26.6" vertical-offset="0" max-vertical-offset="4009">
-          <folding>
-            <element signature="e#422#552#0" expanded="false" />
-            <element signature="e#584#923#0" expanded="false" />
-            <element signature="e#944#4023#0" expanded="false" />
-            <element signature="e#4879#7230#0" expanded="false" />
-            <element signature="e#7267#8649#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/newspath/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="21" selection-start="1544" selection-end="1544" vertical-scroll-proportion="0.6424682" vertical-offset="558" max-vertical-offset="2527">
+        <state line="11" column="45" selection-start="363" selection-end="363" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2527">
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <marker date="1400067423519" expanded="true" signature="662:791" placeholder="select * fro..missing_value..." />
@@ -1027,6 +977,45 @@
             <marker date="1400067423519" expanded="true" signature="2348:2390" placeholder="select sourc..newsSource..." />
             <marker date="1400067423519" expanded="true" signature="2763:2805" placeholder="select ID fr..newsSource..." />
             <marker date="1400067423519" expanded="true" signature="3073:3107" placeholder="select * fro..newsDetail..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/backup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="182" column="39" selection-start="5734" selection-end="5734" vertical-scroll-proportion="0.0" vertical-offset="1514" max-vertical-offset="2090">
+          <folding>
+            <element signature="e#2655#5734#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/graph.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="39" selection-start="654" selection-end="654" vertical-scroll-proportion="-19.678572" vertical-offset="0" max-vertical-offset="969">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/newspath.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="23" selection-start="1061" selection-end="1072" vertical-scroll-proportion="-9.392858" vertical-offset="79" max-vertical-offset="627">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/newspath.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="268" column="39" selection-start="9178" selection-end="9178" vertical-scroll-proportion="0.62068963" vertical-offset="1482" max-vertical-offset="2337">
+          <folding>
+            <element signature="e#1264#3615#0" expanded="false" />
+            <element signature="e#3652#5034#0" expanded="false" />
+            <element signature="e#5068#6500#0" expanded="false" />
+            <element signature="e#6542#7711#0" expanded="false" />
+            <element signature="e#9298#10210#0" expanded="false" />
           </folding>
         </state>
       </provider>
