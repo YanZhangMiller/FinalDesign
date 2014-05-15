@@ -2,30 +2,9 @@
  * Created by Yan on 2014/3/31.
  */
 var baseUrl = "http://127.0.0.1:8000/newspath/",
-    graph = {
-    "0": ["1","2"]
-    },
-    nodes = {
-    "0":{
-        "Title":"新华网"
-    },
-    "1":{
-        "Title":"网易"
-    },
-    "2":{
-        "Title":"腾讯"
-    },
-    "3":{
-        "Title":"3"
-    },
-    "4":{
-        "Title":"4"
-    }
-    },
-
-    paper,
-    website = {},
-    newsList = [];
+    graph = {    },
+    nodes = {    },
+    paper;
 
 $(function() {
     var show_graph = function(id){
@@ -37,20 +16,20 @@ $(function() {
             var list = getNodeList(tree);
             if (paper == undefined)
                 var paper = Raphael(d.offsetLeft, d.offsetTop, d.offsetWidth, d.offsetHeight);
-    //console.log(JSON.stringify(list))
-            //console.log(JSON.stringify(list))
-            //console.log(JSON.stringify(nodes))
-            drawTree(paper,list)
+            drawTree(paper,list);
+            circles[id].animate({"fill-opacity":.7}, 500);
             $("#newscontent").html(wrapContent(id));
         },"json")
     };
-    show_graph("4");
+    show_graph("5");
 });
 var circles = {},
     text = {},
     connections = [],
     r = 30,
     gap = 5,
+    start = Math.PI * 0,
+    end = Math.PI * 0.5,
     margin = 30;
 
 
@@ -113,33 +92,35 @@ Raphael.fn.connection = function (obj1, obj2, line, bg) {
 };
 
 var getNodeList = function (tree) {
+    r = r + 30 / Object.keys(nodes).length;
+    //console.log(r)
     var nodeList = [],
         calc = function (nodes, center) {
             if (nodes.length > 0) {
-                var alpha = (center.end - center.start ) / (nodes.length + 1.0);
-                var x;
+                var x,alpha = (center.end - center.start ) / (nodes.length + 1.0);
                 if (nodes.length > 1)
                     x =  (r + gap / 2.0) / Math.sin(alpha / 2.0) ;
                 else
                     x = gap + 2 * r;
                 if (x < gap + 2 * r)
                     x = gap + 2 * r;
-
                 for (var i = 0; i < nodes.length; i++) {
                     var node = {
-                        "x": x * Math.sin(center.start + alpha * (0.25 + i)) + center.x,
-                        "y": x * Math.cos(center.start + alpha * (0.25 + i)) + center.y,
-                        "r": center.r,
+                        "x": x * Math.sin(center.start + alpha * (0.7 + i)) + center.x,
+                        "y": x * Math.cos(center.start + alpha * (0.7 + i)) + center.y,
+                        "r": center.r * 1,
                         "start": center.start + alpha * (i==0?i:i-1),
-                        "end": center.start + alpha * (i==length? i + 1 : i + 2),
+                        "end": center.start + alpha * (i==nodes.length? i + 1 : i + 2),
                         "id": nodes[i].id
                     };
+                    //console.log(node)
                     nodeList.push(node);
                     calc(nodes[i].childeren, node);
                 }
             }
-        };
-    var node = {"x": 0, "y": 0, "start":0, "end": Math.PI / 2, "id": tree[0].id, "r": r};
+        },
+     node = {"x": 0, "y": 0, "start": start, "end": end, "id": tree[0].id, "r": r};
+
     if (tree.length == 1) {
         nodeList.push(node);
         calc(tree[0].childeren, node);
@@ -153,7 +134,8 @@ var getNodeList = function (tree) {
 var getTree = function (graph) {
     var tree = [],
         leaf = [],
-        outcome = [];
+        outcome = [],
+        min = 0;
     for (var i in graph)
     {
         outcome[i] = graph[i].length;
@@ -161,20 +143,18 @@ var getTree = function (graph) {
             if (outcome[graph[i][j]] == undefined)
                 outcome[graph[i][j]] = 0;
     }
-    //document.write(JSON.stringify(outcome) + "<br />")
-    var min = 0;
     while (min < outcome.length)
     {
+        //console.log(outcome)
         leaf = tree;
         tree = [];
         min = outcome.length;
         for (var i in outcome) if (outcome[i] < min)
             min = outcome[i];
-        //document.write(min + "<br />")
         for (var i in outcome) if (outcome[i] == min) {
+            //console.log(i + outcome[i] + min)
             outcome[i] = undefined;
             var node = {};
-            //node.data = nodes[i];
             node.id = i;
             node.childeren = [];
             node.number = 1;
@@ -184,14 +164,19 @@ var getTree = function (graph) {
                 leaf[k] = undefined;
             }
             tree.push(node);
-            for (var j in graph) for (var k in graph[j]) if (graph[j][k] == i)
-                outcome[j] -= 1;
+
         }
+        /*for (var j in graph) for (var k in graph[j]) if (graph[j][k] == i)
+            outcome[j] -= 1;*/
+        //console.log("tree:")
+        //console.log(tree)
+        //console.log("leaf:")
+        //console.log(leaf)
+        //console.log(outcome)
         for (var k in leaf) if (leaf[k] != undefined)
             tree.push(leaf[k]);
-        //document.write(JSON.stringify(leaf) + "<br />")
-        //document.write(JSON.stringify(tree) + "<br />")
     }
+    //console.log(tree)
     return tree;
 }
 
@@ -262,8 +247,10 @@ var drawNode = function (paper,node){
     circle.text.attr({ "font-size": 16,"font-weight": "bold"});
     circle.drag(move,dragger,up);
     circle.mouseup(function(){
-        $("#newscontent").html(wrapContent(node.id));
-        //this.animate({"fill-opacity": .2}, 1500);
+        $("#newscontent").fadeOut(500,function(){
+            $("#newscontent").html(wrapContent(node.id));
+            $("#newscontent").fadeIn(500);
+        });
         for(var c in circles)
             circles[c].animate({"fill-opacity":.2},100);
         this.animate({"fill-opacity":.7}, 500);
@@ -304,13 +291,22 @@ var wrapContent = function (id) {
 
     //console.log(nodes[id])
     //console.log(nodes[id].Author)
-    return "<h1>" + nodes[id].Title + "</h1>"
-        +"<p>作者:" + nodes[id].Author +"&nbsp;" + nodes[id].ReleaseDateTime + "</p>";
+    var node = nodes[id],
+        author = getText("作者：",node.Author),//(node.Author == undefined || node.Author == "") ? "":"作者：" + node.Author,
+        releaseDate = getText("发布日期：",node.ReleaseDateTime),
+        website = getText("网站：",node.Website),
+        geo = getText("地理位置：",node.Geo),
+        //source = getText("",node.Source),
+        content = node.Content,
+        link = '<p><a href="' + node.ID + '">原文链接</a></p>';
+
+    return "<h1>" + node.Title + "</h1>"
+        + author  + releaseDate + website +  geo + link
+        +"<div>" + content + "</div>"
 }
 
-var resetConnection = function (paper){
-     for (var i = connections.length; i--;) {
-                paper.connection(connections[i]);
-            }
-     paper.safari();
+var getText = function(head,text){
+    if (text==undefined || text == "")
+        return "";
+    return "<p>" + head + text + "</p>";
 }

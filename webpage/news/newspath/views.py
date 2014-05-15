@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response
 from newspath.functions import *
 from django.shortcuts import HttpResponse
 from django.db import connection, transaction
-import json
+import json,copy
 # Create your views here.
 
 
@@ -42,12 +42,12 @@ def search_graph(request):
             #print cursor.fetchone()[0]
             try:
                 cur = cursor.fetchone()[0]
-
+                if root == cur:
+                    break
                 if cur:
                     root = cur
             except:
                 break
-
         nodes = [root]
         l.append(root)
         while len(nodes) > 0:
@@ -65,6 +65,14 @@ def search_graph(request):
                         graph[key] = [value]
             nodes = temp
         n = get_data(l)
+        if len(n) == 1 and n[0]["Source"] != '""':
+            n.append(copy.deepcopy(n[0]))
+            n[1]["ID"] = json.dumps(json.loads(n[0]["ID"]) + "#")
+            n[1]["Website"] = n[0]["Source"]
+            n[1]["Source"] = '""'
+            graph[n[1]["ID"]] = [n[0]["ID"]]
+        if len(graph) == 0:
+            graph[json.dumps(root)] = []
     return render_to_response("graph.html", {"graph": graph, "nodes": n})
 
 
@@ -114,7 +122,7 @@ def get_data(l):
                     row[i] = json.dumps(row[i].strftime("%Y-%m-%d"))
             data.append(
                 dict(ID=row[0], Website=row[1], ReleaseDateTime=row[2], Title=row[3], Author=row[4], Content=row[5],
-                     Hot=row[6], Source=row[7], UpdateDateTime=row[8], Geo=row[9], Sentiment=row[10], Summary=row[11]))
+                     Hot=row[6], Source=row[7], UpdateDateTime=row[8], Geo=row[10], Sentiment=row[11], Summary=row[12]))
         except:
             pass
     return data
